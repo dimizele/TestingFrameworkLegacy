@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BaseSetup.UpgradedSelenium;
 using OpenQA.Selenium;
 
 namespace BaseSetup.Page
 {
     public abstract class BasePage
     {
-        public IWebDriver Driver { get; set; }
+        public UpWebDriver Driver { get; set; }
 
         public abstract string pageUrl { get; set; }
 
@@ -28,7 +29,7 @@ namespace BaseSetup.Page
 
         }
 
-        protected BasePage(IWebDriver driver)
+        protected BasePage(UpWebDriver driver)
         {
             Driver = driver;
         }

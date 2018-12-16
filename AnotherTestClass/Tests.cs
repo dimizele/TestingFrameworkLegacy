@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BaseSetup.Browser;
+﻿using BaseSetup.Browser;
 using BaseSetup.Test;
 using NUnit.Framework;
 using Tests.Pages;

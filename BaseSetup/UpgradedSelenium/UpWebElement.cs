@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Internal;
@@ -10,58 +11,199 @@ namespace BaseSetup.UpgradedSelenium
 {
     public class UpWebElement : IWebElement, IWrapsElement
     {
-        public IWebElement FindElement(By @by)
+        protected UpWebDriver upDriver;
+        protected IWebElement element;
+
+
+        public UpWebElement(UpWebDriver driver, IWebElement element)
         {
-            throw new NotImplementedException();
+            this.upDriver = driver;
+            this.element = element;
         }
 
-        public ReadOnlyCollection<IWebElement> FindElements(By @by)
+        public UpWebElement(UpWebDriver driver, By elementLocator)
         {
-            throw new NotImplementedException();
+            this.upDriver = driver;
+            element = this.upDriver.FindElement(elementLocator);
+        }
+
+        public UpWebDriver UpDriver
+        {
+            get
+            {
+                return upDriver;
+            }
+        }
+
+        public IWebElement WrappedElement
+        {
+            get { return element; }
+        }
+
+        public UpWebElement FindElement(By by)
+        {
+            upDriver.WaitForDocumentState();
+            upDriver.WaitForjQuery();
+            upDriver.WaitForAngular();
+            return new UpWebElement(upDriver, element.FindElement(by));
+        }
+
+        public ReadOnlyCollection<UpWebElement> FindElements(By by)
+        {
+            upDriver.WaitForDocumentState();
+            upDriver.WaitForjQuery();
+            upDriver.WaitForAngular();
+            return new ReadOnlyCollection<UpWebElement>(element.FindElements(by).Select(el => new UpWebElement(upDriver, el)).ToList());
+        }
+
+        IWebElement ISearchContext.FindElement(By by)
+        {
+            upDriver.WaitForDocumentState();
+            upDriver.WaitForjQuery();
+            upDriver.WaitForAngular();
+            return FindElement(by);
+        }
+
+        ReadOnlyCollection<IWebElement> ISearchContext.FindElements(By by)
+        {
+            upDriver.WaitForDocumentState();
+            upDriver.WaitForjQuery();
+            upDriver.WaitForAngular();
+
+            return new ReadOnlyCollection<IWebElement>(element.FindElements(by).Select(el => new UpWebElement(upDriver, el) as IWebElement).ToList());
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            upDriver.WaitForDocumentState();
+            upDriver.WaitForjQuery();
+            upDriver.WaitForAngular();
+            element.Clear();
         }
 
         public void SendKeys(string text)
         {
-            throw new NotImplementedException();
+            upDriver.WaitForDocumentState();
+            upDriver.WaitForjQuery();
+            upDriver.WaitForAngular();
+            element.SendKeys(text);
         }
 
         public void Submit()
         {
-            throw new NotImplementedException();
+            upDriver.WaitForDocumentState();
+            upDriver.WaitForjQuery();
+            upDriver.WaitForAngular();
+            element.Submit();
         }
 
         public void Click()
         {
-            throw new NotImplementedException();
+            upDriver.WaitForDocumentState();
+            upDriver.WaitForjQuery();
+            upDriver.WaitForAngular();
+            element.Click();
         }
 
         public string GetAttribute(string attributeName)
         {
-            throw new NotImplementedException();
+            upDriver.WaitForDocumentState();
+            upDriver.WaitForjQuery();
+            upDriver.WaitForAngular();
+            return element.GetAttribute(attributeName);
         }
 
         public string GetProperty(string propertyName)
         {
-            throw new NotImplementedException();
+            upDriver.WaitForDocumentState();
+            upDriver.WaitForjQuery();
+            upDriver.WaitForAngular();
+            return element.GetProperty(propertyName);
         }
 
         public string GetCssValue(string propertyName)
         {
-            throw new NotImplementedException();
+            upDriver.WaitForDocumentState();
+            upDriver.WaitForjQuery();
+            upDriver.WaitForAngular();
+            return element.GetCssValue(propertyName);
         }
 
-        public string TagName { get; }
-        public string Text { get; }
-        public bool Enabled { get; }
-        public bool Selected { get; }
-        public Point Location { get; }
-        public Size Size { get; }
-        public bool Displayed { get; }
-        public IWebElement WrappedElement { get; }
+        public string TagName
+        {
+            get
+            {
+                upDriver.WaitForDocumentState();
+                upDriver.WaitForjQuery();
+                upDriver.WaitForAngular();
+                return element.TagName;
+            }
+        }
+
+        public string Text
+        {
+            get
+            {
+                upDriver.WaitForDocumentState();
+                upDriver.WaitForjQuery();
+                upDriver.WaitForAngular();
+                return element.Text;
+            }
+        }
+
+        public bool Enabled
+        {
+            get
+            {
+                upDriver.WaitForDocumentState();
+                upDriver.WaitForjQuery();
+                upDriver.WaitForAngular();
+                return element.Enabled;
+            }
+        }
+
+        public bool Selected
+        {
+            get
+            {
+                upDriver.WaitForDocumentState();
+                upDriver.WaitForjQuery();
+                upDriver.WaitForAngular();
+                return element.Selected;
+            }
+        }
+
+        public Point Location
+        {
+            get
+            {
+                upDriver.WaitForDocumentState();
+                upDriver.WaitForjQuery();
+                upDriver.WaitForAngular();
+                return element.Location;
+            }
+        }
+
+        public Size Size
+        {
+            get
+            {
+                upDriver.WaitForDocumentState();
+                upDriver.WaitForjQuery();
+                upDriver.WaitForAngular();
+                return element.Size;
+            }
+        }
+
+        public bool Displayed
+        {
+            get
+            {
+                upDriver.WaitForDocumentState();
+                upDriver.WaitForjQuery();
+                upDriver.WaitForAngular();
+                return element.Displayed;
+            }
+        }
     }
 }

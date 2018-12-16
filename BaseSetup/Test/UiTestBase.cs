@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using BaseSetup.Browser;
+using BaseSetup.UpgradedSelenium;
 using NUnit.Framework;
 using OpenQA.Selenium;
 
@@ -9,7 +10,7 @@ namespace BaseSetup.Test
 {
     public class UiTestBase
     {
-        public IWebDriver Driver { get; set; }
+        public UpWebDriver Driver { get; set; }
 
         [OneTimeSetUp]
         public virtual void OneTimeSetUp()

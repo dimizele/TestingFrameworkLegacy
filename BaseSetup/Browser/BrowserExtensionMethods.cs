@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using BaseSetup.Page;
+using BaseSetup.UpgradedSelenium;
 using OpenQA.Selenium;
 
 namespace BaseSetup.Browser
 {
     public static class BrowserExtensionMethods
     {
-        public static T GoToPage<T>(this IWebDriver driver) where T : BasePage, new()
+        public static T GoToPage<T>(this UpWebDriver driver) where T : BasePage, new()
         {
             var page = new T { Driver = driver };
 

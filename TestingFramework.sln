@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BaseUiSetup", "BaseUiSetup", "{B8CB8E5C-799F-446A-AA84-291D5C3BD8CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseSetup", "BaseSetup\BaseSetup.csproj", "{E65FAEDD-F3E5-4A92-9D22-3E6FED529FA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseSetup", "BaseSetup\BaseSetup.csproj", "{E65FAEDD-F3E5-4A92-9D22-3E6FED529FA3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UiTests", "UiTests", "{A25501E0-F8AA-4439-9F44-561A4CF5C444}"
 EndProject
