@@ -39,13 +39,13 @@ namespace Tests.Pages
             return this;
         }
 
-        public LogInPage LogIn(string username, string password)
+        public LogInVeryfyingPage LogIn(string username, string password)
         {
             FillUsername(username);
             FillPassword(password);
             LogInButton.Click();
 
-            return this;
+            return new LogInVeryfyingPage  { Driver = Driver }; ;
         }
     }
 }

@@ -60,10 +60,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\BookingsVerifying.cs" />
+    <Compile Include="Pages\ContactUsVerifying.cs" />
     <Compile Include="Pages\HomePage.cs" />
+    <Compile Include="Pages\LogInVeryfyingPage.cs" />
+    <Compile Include="Pages\MyProfilePageVeryfying.cs" />
+    <Compile Include="Pages\ResetPasswordVeryfying.cs" />
+    <Compile Include="Pages\SearchForCarsPage.Cs" />
+    <Compile Include="Pages\SearchHotelsPage.cs" />
+    <Compile Include="Pages\BookingsPage.cs" />
+    <Compile Include="Pages\ContactUsPage.cs" />
     <Compile Include="Pages\LogInPage.cs" />
+    <Compile Include="Pages\MyProfilePage.cs" />
+    <Compile Include="Pages\SearchFlightsPage.cs" />
+    <Compile Include="Pages\SignUpSupplierTourVeryfying.cs" />
+    <Compile Include="Pages\SignUpVerifyingPage.cs" />
+    <Compile Include="Pages\SupplierLogInVeryfying.cs" />
+    <Compile Include="Pages\ResetPasswordPage.cs" />
+    <Compile Include="Pages\SignUpPage.cs" />
+    <Compile Include="Pages\SupplierLogInPage.cs" />
+    <Compile Include="Pages\SupplierSignUpPageHotels.cs" />
+    <Compile Include="Pages\SupplierSignUpPageTours.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\SearchHotelsPageTests.cs" />
+    <Compile Include="Tests\BookingsPageTests.cs" />
+    <Compile Include="Tests\ContactUsPageTests.cs" />
     <Compile Include="Tests\LogInPageTests.cs" />
+    <Compile Include="Tests\MyProfilePageTests.cs" />
+    <Compile Include="Tests\SearchFlightsPageTests.cs" />
+    <Compile Include="Tests\SearchForCarsPageTests.cs" />
+    <Compile Include="Tests\ResetPasswordPageTests.cs" />
+    <Compile Include="Tests\SignUpPageTests.cs" />
+    <Compile Include="Tests\SignUpSupplierPageToursTests.cs" />
+    <Compile Include="Tests\SupplierLogInPageTests.cs" />
+    <Compile Include="Tests\SupplierSignUpPageHotelsTests.cs" />
+    <Compile Include="TextFixtureAttribute.cs" />
+    <Compile Include="UiBaseTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -72,6 +104,10 @@
     <ProjectReference Include="..\BaseSetup\BaseSetup.csproj">
       <Project>{E65FAEDD-F3E5-4A92-9D22-3E6FED529FA3}</Project>
       <Name>BaseSetup</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SupportClient\SupportClient.csproj">
+      <Project>{8171AB2B-54C0-4567-B5E0-E1DBED3848C5}</Project>
+      <Name>SupportClient</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

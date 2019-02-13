@@ -30,7 +30,7 @@ namespace SupportClient.Helpers
             string emailLocalPart = new string(Enumerable.Repeat(emailChars, random.Next(8,13)).Select(s => s[random.Next(s.Length)]).ToArray());
             string emailDomain = new string(Enumerable.Repeat(domainChars, random.Next(4, 7)).Select(s => s[random.Next(s.Length)]).ToArray());
 
-            return $"{emailLocalPart}@{emailDomain}";
+            return $"{emailLocalPart}@{emailDomain}.com";
         }
 
         public static int RandomNumber (int min, int max)
