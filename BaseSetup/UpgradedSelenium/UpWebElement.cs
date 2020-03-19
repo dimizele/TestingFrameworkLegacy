@@ -40,6 +40,11 @@ namespace BaseSetup.UpgradedSelenium
             get { return element; }
         }
 
+        public void SendKeys(object p)
+        {
+            throw new NotImplementedException();
+        }
+
         public UpWebElement FindElement(By by)
         {
             upDriver.WaitForDocumentState();
@@ -105,12 +110,27 @@ namespace BaseSetup.UpgradedSelenium
             element.Click();
         }
 
+        public void SelectByIndex(int index)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SelectByValue(string country)
+        {
+            throw new NotImplementedException();
+        }
+
         public string GetAttribute(string attributeName)
         {
             upDriver.WaitForDocumentState();
             upDriver.WaitForjQuery();
             upDriver.WaitForAngular();
             return element.GetAttribute(attributeName);
+        }
+
+        public void Select()
+        {
+            throw new NotImplementedException();
         }
 
         public string GetProperty(string propertyName)
